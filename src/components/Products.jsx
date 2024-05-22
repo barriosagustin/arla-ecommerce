@@ -22,9 +22,11 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
+      const response = await fetch("https://664d015cede9a2b55652603e.mockapi.io/products");
+      // const response = await fetch("https://fakestoreapi.com/products/");
       if (componentMounted) {
         setData(await response.clone().json());
+        console.log(data)
         setFilter(await response.json());
         setLoading(false);
       }
@@ -74,12 +76,12 @@ const Products = () => {
       <>
         <div className="buttons text-center py-5">
           <button className="btn btn-outline-dark btn-sm m-2" onClick={() => setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("women's clothing")}>
-            Women's Clothing
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("yerba")}>Yerba</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("alfajor")}>
+            Alfajores
           </button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("electronics")}>Electronics</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("dulce de leche")}>Dulce de leche</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("galletitas")}>Galletitas</button>
         </div>
 
         {filter.map((product) => {

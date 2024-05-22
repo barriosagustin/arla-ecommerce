@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 
-import { Footer, Navbar } from "../components";
+import { WhatsAppButton,Footer, Navbar } from "../components";
 
 const Product = () => {
   const { id } = useParams();
@@ -24,15 +24,16 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`https://664d015cede9a2b55652603e.mockapi.io/products/${id}`);
       const data = await response.json();
       setProduct(data);
       setLoading(false);
       const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
+        `https://664d015cede9a2b55652603e.mockapi.io/products`
       );
       const data2 = await response2.json();
-      setSimilarProducts(data2);
+      const filteredData = data2.filter(product => product.category === data.category);
+      setSimilarProducts(filteredData);
       setLoading2(false);
     };
     getProduct();
@@ -186,6 +187,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <WhatsAppButton/>
       <Footer />
     </>
   );

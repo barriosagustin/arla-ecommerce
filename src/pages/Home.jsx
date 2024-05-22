@@ -1,4 +1,4 @@
-import { Navbar, Main, Product, Footer } from "../components";
+import { Navbar, Main, Product, WhatsAppButton,Footer } from "../components";
 
 function Home() {
   return (
@@ -6,6 +6,7 @@ function Home() {
       <Navbar />
       <Main />
       <Product />
+      <WhatsAppButton/>
       <Footer />
     </>
   )
