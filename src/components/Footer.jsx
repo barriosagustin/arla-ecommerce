@@ -6,8 +6,8 @@ const Footer = () => {
       <footer className="mb-0 text-center">
         <div className="d-flex align-items-center justify-content-center pb-5">
           <div className="col-md-6">
-            <p className="mb-3 mb-md-0">Made with ❤️ {" "}
-              <a  href="/" className="text-decoration-underline text-dark fs-5" target="_blank" rel="noreferrer">arla</a>
+            <p className="mb-3 mb-md-0">Made by {" "}
+              <a  href="/" className="text-decoration-underline text-dark fs-5" target="_blank" rel="noreferrer">arLa</a>
             </p>
           </div>
         </div>
